@@ -10,9 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentEcodiner = 0;
     let currentObservation = null;
 
-      // --- iNaturalist API configurada para 50 km alrededor de Catriel, Río Negro ---
+    // --- iNaturalist API configurada para 50 km alrededor de Catriel, Río Negro ---
     const INATURALIST_API_URL = 'https://api.inaturalist.org/v1/observations?quality_grade=research&photos=true&licensed=true&license=cc-by,cc-by-nc,cc0&taxon_id=1,47126,47170&per_page=50&order=desc&order_by=created_at&locale=es&lat=-37.877778&lng=-67.791667&radius=50';
-
 
     async function fetchNewObservation() {
         feedbackMessage.textContent = 'Cargando nueva imagen...';
@@ -110,4 +109,5 @@ document.addEventListener('DOMContentLoaded', () => {
     submitButton.addEventListener('click', checkAnswer);
     fetchNewObservation();
 });
+
 
