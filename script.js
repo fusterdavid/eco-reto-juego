@@ -85,21 +85,21 @@ document.addEventListener('DOMContentLoaded', () => {
             feedbackMessage.textContent = '¡Correcto! Ambas respuestas son acertadas.';
             feedbackMessage.className = 'correct';
             currentEcodiner += 10;
-            setTimeout(fetchNewObservation, 2000);
+            setTimeout(fetchNewObservation, 5000);
         } else if (isKingdomCorrect) {
             feedbackMessage.textContent = `¡Reino Correcto! Pero la especie es incorrecta. La especie era: ${currentObservation.taxon.name}${commonName ? ` (${commonName})` : ''}`;
             feedbackMessage.className = 'incorrect';
             currentEcodiner += 2;
-            setTimeout(fetchNewObservation, 3000);
+            setTimeout(fetchNewObservation, 10000);
         } else if (isSpeciesCorrect) {
             feedbackMessage.textContent = `¡Especie Correcta! Pero el reino es incorrecto. El reino era: ${correctKingdom}`;
             feedbackMessage.className = 'incorrect';
             currentEcodiner += 5;
-            setTimeout(fetchNewObservation, 3000);
+            setTimeout(fetchNewObservation, 10000);
         } else {
             feedbackMessage.textContent = `Incorrecto. El reino era "${correctKingdom}" y la especie "${currentObservation.taxon.name}${commonName ? ` (${commonName})` : ''}".`;
             feedbackMessage.className = 'incorrect';
-            setTimeout(fetchNewObservation, 3500);
+            setTimeout(fetchNewObservation, 10000);
         }
 
         ecodinerDisplay.textContent = currentEcodiner;
